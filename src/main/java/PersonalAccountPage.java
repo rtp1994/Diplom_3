@@ -8,6 +8,7 @@ public class PersonalAccountPage {
     private final By headerConstructor = By.xpath(".//p[text()='Конструктор']");
     private final By logo = By.xpath(".//a[@href='/']");
     private final By textAssembleBurger = By.xpath(".//h1[text()='Соберите бургер']");
+    private final By textInfo = By.xpath(".//p[text()='В этом разделе вы можете изменить свои персональные данные']");
 
     public PersonalAccountPage(WebDriver driver) {
         this.driver = driver;
@@ -23,6 +24,10 @@ public class PersonalAccountPage {
     @Step("Click logo")
     public void clickLogo() {
         driver.findElement(logo).click();
+    }
+    public boolean isDisplayedTextInfo() {
+        driver.findElement(textInfo).isDisplayed();
+        return true;
     }
     public boolean isDisplayedTextAssembleBurger() {
         driver.findElement(textAssembleBurger).isDisplayed();

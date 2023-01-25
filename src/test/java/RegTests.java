@@ -38,7 +38,6 @@ public class RegTests {
     @Before
     @Step("Open site")
     public void setUp(){
-        System.setProperty("webdriver.chrome.driver", "C:/cygwin64/home/Basek/Diplom/Diplom3/drivers/chromedriver_win32/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driver.manage().window().maximize();

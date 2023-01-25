@@ -14,7 +14,6 @@ public class HomePageTests{
     @Before
     @Step("Open")
     public void setUp(){
-        System.setProperty("webdriver.chrome.driver", "C:/cygwin64/home/Basek/Diplom/Diplom3/drivers/chromedriver_win32/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();

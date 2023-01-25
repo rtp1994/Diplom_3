@@ -13,7 +13,6 @@ public class LoginTests {
     private LoginPage loginPage;
     @Before
     public void setUp(){
-        System.setProperty("webdriver.chrome.driver", "C:/cygwin64/home/Basek/Diplom/Diplom3/drivers/chromedriver_win32/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -27,7 +26,7 @@ public class LoginTests {
         homePage.clickButtonPersonalAccount();
 
         loginPage = new LoginPage(driver);
-        loginPage.login("aaa@ya.ru", "aaaaaa");
+        loginPage.login("tasya.morozova@gmail.com", "123456");
     }
     @Test
     @Step("Open site and login")
@@ -39,7 +38,7 @@ public class LoginTests {
         PersonalAccountPage personalAccountPage = new PersonalAccountPage(driver);
 
         loginPage = new LoginPage(driver);
-        loginPage.login("aaa@ya.ru", "aaaaaa");
+        loginPage.login("tasya.morozova@gmail.com", "123456");
     }
     @Test
     @Step("Open site and login")
@@ -50,7 +49,7 @@ public class LoginTests {
         registrationPage.clickButtonEnter();
 
         loginPage = new LoginPage(driver);
-        loginPage.login("aaa@ya.ru", "aaaaaa");
+        loginPage.login("tasya.morozova@gmail.com", "123456");
     }
     @Test
     @Step("Open site and login")
@@ -61,11 +60,12 @@ public class LoginTests {
         passwordRecoveryPage.clickEnterPasswordRecoveryPage();
 
         loginPage = new LoginPage(driver);
-        loginPage.login("aaa@ya.ru", "aaaaaa");
+        loginPage.login("tasya.morozova@gmail.com", "123456");
     }
     @After
     public void tearDown() {
         HomePage homePage = new HomePage(driver);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         Assert.assertTrue(homePage.isDisplayedCheckoutButton());
         driver.quit();
     }
